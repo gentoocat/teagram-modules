@@ -33,5 +33,5 @@ class QRcodeMod(loader.Module):
         img.save('assets/code.png')
 
         with open('assets/code.png', 'rb') as photo:
-           await app.send_photo(message.chat.id, photo, caption=f"<b>Ваш QRcode с текстом <code>{txt}</code> создан</b>")
+           await utils.answer(message, photo, photo=True, caption=f'<b>Ваш QRcode с текстом <code>{txt}</code> создан</b>')
            return await message.delete()
