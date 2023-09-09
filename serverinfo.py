@@ -19,7 +19,7 @@ def bytes_to_megabytes(b: int) -> int:
 class ServerInfoMod(loader.Module):
     """Информация о сервере"""
 
-    async def serverinfo_cmd(self, app, message):
+    async def serverinfo_cmd(self, message):
         """Показывает информацию о сервере"""
         processor = str(platform.architecture()[0]).replace("&", "&amp;").replace("<", "&lt;").replace(">", "&gt;")
         ram = bytes_to_megabytes(psutil.virtual_memory().total - psutil.virtual_memory().available)
