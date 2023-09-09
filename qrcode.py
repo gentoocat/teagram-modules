@@ -19,6 +19,7 @@ class QRcodeMod(loader.Module):
     async def qrcode_cmd(self, message):
         """Создание qrcode"""
         await message.edit("<b><emoji id=5325731315004218660>🔄</emoji> Создание QRcode...</b>")
+        app = self.client
         try:
             txt = ' '.join(message.text.split(" ")[1:])
         except:
